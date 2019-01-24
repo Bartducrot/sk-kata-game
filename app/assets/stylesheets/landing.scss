@@ -1,0 +1,28 @@
+// Place all the styles related to the Landing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.initial-message {
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Lilita One', cursive;
+  margin: 1em;
+}
+
+.blue {
+  color: #1fbed4;
+}
+
+.white {
+  color: white;
+}
+
+#app {
+  background-color: #022149;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
