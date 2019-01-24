@@ -1,12 +1,6 @@
 // Place all the styles related to the Landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.initial-message {
-  font-size: 2em;
-  text-align: center;
-  font-family: 'Lilita One', cursive;
-  margin: 1em;
-}
 
 .blue {
   color: #1fbed4;
@@ -25,4 +19,38 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  .initial-message {
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Lilita One', cursive;
+    margin: 1em;
+  }
+  .users-list-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1em;
+    font-family: 'Lilita One', cursive;
+    width: 800px;
+  }
+
+  .mug-shot {
+    border-radius: 50%;
+    height: 200px;
+  }
+
+  .user-container {
+    margin: 30px;
+  }
+
+  .guess-who {
+    font-size: 2em;
+    font-family: 'Lilita One', cursive;
+    color: white;
+  }
 }
+
