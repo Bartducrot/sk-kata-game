@@ -41,10 +41,20 @@
   .mug-shot {
     border-radius: 50%;
     height: 200px;
+    border: 4px solid transparent;
+  }
+
+  .correct {
+    background-color: red;
+    border: 4px solid green;
+  }
+
+  .wrong {
+    border: 4px solid red;
   }
 
   .user-container {
-    margin: 30px;
+    margin: 26px;
   }
 
   .guess-who {
@@ -52,5 +62,25 @@
     font-family: 'Lilita One', cursive;
     color: white;
   }
-}
 
+  #banner {
+    position : absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 100vw;
+  }
+
+  .banner--right {
+    background-color: green;
+  }
+
+  .banner--wrong {
+    background-color: red;
+  }
+
+  .banner-hidden {
+    display: none;
+  }
+}
