@@ -68,16 +68,26 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
-    width: 100vw;
+    height: 50vh;
+    width: 50vw;
   }
 
   .banner--right {
-    background-color: green;
+    background-image: url('https://media.giphy.com/media/qvkiDE3xwRPdm/giphy.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-size: 3em;
+    text-align: center;
   }
 
   .banner--wrong {
-    background-color: red;
+    background-image: url('https://media.giphy.com/media/3o7TKr3nzbh5WgCFxe/giphy.gif');
+    background-size: contain;
+    color: white;
+    font-size: 3em;
+    text-align: center;
   }
 
   .banner-hidden {

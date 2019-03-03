@@ -43,24 +43,42 @@
         return (this.userHasChosen && this.chosenUser === this.electedUser);
       },
       bannerText() {
-        if (this.rightAnswer) return 'YOU DID IT (again)';
-        return 'YOU DIED';
+        if (this.rightAnswer) return 'Yay! We did it!!';
+        return `Tu as confondu ${this.chosenUser.firstName} avec ${this.electedUser.firstName}, gros boulet`;
       },
     },
     methods: {
       fetchUsers() {
         this.users = [
-          { firstName: 'Bart', photo: 'bart.jpeg' },
-          { firstName: 'Celestin', photo: 'celo.jpeg' },
           { firstName: 'Agathe', photo: 'agathe.jpeg' },
-          { firstName: 'Victor', photo: 'victor_l.jpeg' },
+          { firstName: 'Alexis', photo: 'alex.jpeg' },
+          { firstName: 'Ariane', photo: 'ari.jpeg' },
+          { firstName: 'Bart', photo: 'bart.jpeg' },
           { firstName: 'Benoit', photo: 'benoit.jpeg' },
+          { firstName: 'Carlotta', photo: 'carlos.jpeg' },
+          { firstName: 'Celestin', photo: 'celo.jpeg' },
+          { firstName: 'Darivath', photo: 'dari.jpeg' },
+          { firstName: 'Eliott', photo: 'eliott.jpeg' },
+          { firstName: 'Florian', photo: 'flo.jpeg' },
           { firstName: 'Hien-Chanh', photo: 'HC.jpeg' },
-          { firstName: 'Alex', photo: 'alex.jpeg' },
-          { firstName: 'Ari', photo: 'ari.jpeg' },
-          { firstName: 'Tristan', photo: 'dentiste.jpeg' },
+          { firstName: 'Héloïse', photo: 'heloise.jpeg' },
+          { firstName: 'Jeremy', photo: 'jeremy.jpeg' },
+          { firstName: 'Julia', photo: 'julia.jpeg' },
+          { firstName: 'Quitterie', photo: 'kit.jpeg' },
+          { firstName: 'Lola', photo: 'lola.jpeg' },
+          { firstName: 'Emmanuelle', photo: 'manue.jpeg' },
+          { firstName: 'Mathilde', photo: 'mathilde.jpeg' },
+          { firstName: 'Minéa', photo: 'mims.jpeg' },
+          { firstName: 'Nicolas', photo: 'nico.jpeg' },
+          { firstName: 'Nisrine', photo: 'niss.jpeg' },
+          { firstName: 'Pierre-Alban', photo: 'PA.jpeg' },
+          { firstName: 'Raphaël', photo: 'raph.jpeg' },
           { firstName: 'Samy', photo: 'samy.jpeg' },
-          { firstName: 'Kit', photo: 'Kit.jpeg' },
+          { firstName: 'Thibault', photo: 'thib.jpeg' },
+          { firstName: 'Thomas', photo: 'toto.jpeg' },
+          { firstName: 'Tristan', photo: 'tristan.jpeg' },
+          { firstName: 'Victor C', photo: 'victor_c.jpeg' },
+          { firstName: 'Victor L', photo: 'victor_l.jpeg' },
         ];
         this.chosenUser = null;
         for (let i = this.users.length - 1; i > 0; i--) {
@@ -72,7 +90,7 @@
       },
       checkAnswer(selectedUser) {
         this.chosenUser = selectedUser;
-        setTimeout(this.fetchUsers, 1250);
+        setTimeout(this.fetchUsers, 1500);
       },
       checkAnswerClass(user) {
         const uRight = this.rightAnswer && this.chosenUser === user
