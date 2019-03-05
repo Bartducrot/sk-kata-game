@@ -51,7 +51,7 @@
       fetchUsers() {
         this.users = [
           { firstName: 'Aéla', photo: 'aela.jpeg' },
-          // { firstName: 'Agathe R', photo: 'agathe_r.jpeg' },
+          { firstName: 'Agathe R', photo: 'agathe_r.jpeg' },
           { firstName: 'Agathe T', photo: 'agathe_t.jpeg' },
           { firstName: 'Alexis', photo: 'alex.jpeg' },
           { firstName: 'Ariane', photo: 'ari.jpeg' },
@@ -60,7 +60,7 @@
           { firstName: 'Benoit', photo: 'benoit.jpeg' },
           { firstName: 'Carlotta', photo: 'carlos.jpeg' },
           { firstName: 'Celestin', photo: 'celo.jpeg' },
-          // { firstName: 'Charlotte', photo: 'charlotte.jpeg' },
+          { firstName: 'Charlotte', photo: 'charlotte.jpeg' },
           { firstName: 'Chloé', photo: 'chloe.jpeg' },
           { firstName: 'Constance C', photo: 'constance_c.jpeg' },
           { firstName: 'Constance P', photo: 'constance_p.jpeg' },
@@ -77,7 +77,7 @@
           { firstName: 'Julie', photo: 'julie.jpeg' },
           { firstName: 'Lola', photo: 'lola.jpeg' },
           { firstName: 'Emmanuelle', photo: 'manue.jpeg' },
-          // { firstName: 'Marie', photo: 'marie.jpeg' },
+          { firstName: 'Marie', photo: 'marie.jpeg' },
           { firstName: 'Mathilde', photo: 'mathilde.jpeg' },
           { firstName: 'Minéa', photo: 'mims.jpeg' },
           { firstName: 'Nicolas', photo: 'nico.jpeg' },
