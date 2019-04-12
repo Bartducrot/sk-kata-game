@@ -1,2 +1,96 @@
-Coucou Arthur
-Tu peux modifier cette view à cette endroit là /app/views/landing/monthly.html.erb
+
+  <h1>
+    Non, il reste encore
+  </h1>
+  <table>
+    <tr>
+      <td id="jour" style="color:#1AB8D2;" width="25%">
+      </td>
+      <td id="heure" width="25%">
+      </td>
+      <td id="minute" width="25%">
+      </td>
+      <td id="seconde" width="25%">
+      </td>
+    </tr>
+    <tr padding-top="30px">
+        <td style="color:#1AB8D2; font-size: 3vw; font-weight: 300;" width="25%">
+          jours
+        </td>
+        <td style="font-size: 3vw; font-weight: 300;" width="25%">
+          heures
+        </td>
+        <td style="font-size: 3vw; font-weight: 300;" width="25%">
+          minutes
+        </td>
+        <td style="font-size: 3vw; font-weight: 300;" width="25%">
+          secondes
+        </td>
+      </tr>
+  </table>
+  <div class="content">
+    <a
+      href="https://worldsbiggestpacman.com/play/#1,0" 
+      target="_blank" 
+      style="font-size:12px; line-height:20px; font-weight:300; text-decoration:none; color:#041630; font-family: Roboto, Helvetica Neue, Helvetica, Open sans, Arial, sans-serif; cursor:pointer;">
+      <%# <img src="wait.gif" border="0"  alt="surprise" width="100%" height="auto"/> %>
+      <%= image_tag('wait.gif')  %>
+    </a>
+  </div>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("May 9, 2019 19:00:00").getTime();
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now and the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="compteur"
+    document.getElementById("jour").innerHTML = days;
+    document.getElementById("heure").innerHTML = hours + " :";
+    document.getElementById("minute").innerHTML = minutes + " :";
+    document.getElementById("seconde").innerHTML = seconds;
+    // If the count down is over, write some text 
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("jour").innerHTML = "C'est maintenant !";
+      document.getElementById("heure").innerHTML = "C'est maintenant ! Nous avons RDV au .... à .... !";
+      document.getElementById("minute").innerHTML = " ";
+      document.getElementById("seconde").innerHTML = " ";
+    }
+  }, 1000);
+  </script>
+  <style>
+    body {
+      background-color: #EDF2F6;
+      color: #032249;
+      font-family: 'FontAwesome', sans-serif;
+      text-align: center;
+    }
+    h1 {
+      padding-top: 36px;
+      font-size: 6vw;
+      margin-top: 20px;
+    }
+    table {
+      margin:0 auto; 
+      font-size: 12vw;
+      font-weight: 600;
+      margin-top: 0px;
+      color:#032249;
+    }
+    .content {
+      padding-top: 40px;
+      margin:0 auto; 
+      max-width: 720px;
+    }
+  </style>
