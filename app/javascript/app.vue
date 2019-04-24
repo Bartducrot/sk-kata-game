@@ -6,10 +6,10 @@
       <div
         v-for='user in batch'
         class='user-container'
+        :key="user.firstName"
         @click='checkAnswer(user)'
       >
-        <img :class="checkAnswerClass(user)" class="mug-shot" :src="`photos/${user.photo}`">
-        </img>
+        <img :class="checkAnswerClass(user)" class="mug-shot" :src="`photos/${user.photo}`"/>>
       </div>
     </div>
     <div id="banner" v-if='userHasChosen' :class='bannerClass()'>
@@ -57,7 +57,6 @@
           { firstName: 'Ariane', photo: 'ari.jpeg' },
           { firstName: 'Arthur', photo: 'arthur.jpeg' },
           { firstName: 'Bart', photo: 'bart.jpeg' },
-          { firstName: 'Benoit', photo: 'benoit.jpeg' },
           { firstName: 'Carlotta', photo: 'carlos.jpeg' },
           { firstName: 'Celestin', photo: 'celo.jpeg' },
           { firstName: 'Charlotte', photo: 'charlotte.jpeg' },
@@ -68,8 +67,8 @@
           { firstName: 'Eliott', photo: 'eliott.jpeg' },
           { firstName: 'Florian', photo: 'flo.jpeg' },
           { firstName: 'Foucauld', photo: 'foucauld.jpeg' },
-          { firstName: 'Hien-Chanh', photo: 'HC.jpeg' },
           { firstName: 'Héloïse', photo: 'heloise.jpeg' },
+          { firstName: 'Hortense', photo: 'hortense.jpeg' },
           { firstName: 'Jeremy', photo: 'jeremy.jpeg' },
           { firstName: 'Julia', photo: 'julia.jpeg' },
           { firstName: 'Quitterie', photo: 'kit.jpeg' },
@@ -82,7 +81,6 @@
           { firstName: 'Minéa', photo: 'mims.jpeg' },
           { firstName: 'Nicolas', photo: 'nico.jpeg' },
           { firstName: 'Nisrine', photo: 'niss.jpeg' },
-          { firstName: 'Pierre-Alban', photo: 'PA.jpeg' },
           { firstName: 'Raphaël', photo: 'raph.jpeg' },
           { firstName: 'Samy', photo: 'samy.jpeg' },
           { firstName: 'Thibault', photo: 'thib.jpeg' },
