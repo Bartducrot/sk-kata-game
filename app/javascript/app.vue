@@ -9,7 +9,7 @@
         :key="user.firstName"
         @click='checkAnswer(user)'
       >
-        <img :class="checkAnswerClass(user)" class="mug-shot" :src="`photos/${user.photo}`"/>>
+        <img :class="checkAnswerClass(user)" class="mug-shot" :src="`photos/${user.photo}`"/>
       </div>
     </div>
     <div id="banner" v-if='userHasChosen' :class='bannerClass()'>
