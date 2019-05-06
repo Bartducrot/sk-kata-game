@@ -1,6 +1,9 @@
 // Place all the styles related to the Landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #022149;
+}
 
 .blue {
   color: #1fbed4;
@@ -10,17 +13,55 @@
   color: white;
 }
 
+.trombi {
+  width: 100%;
+  max-width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+}
+
 #app {
-  background-color: #022149;
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+  
+  .bu-choice {
+    color: #1fbded;
+    font-family: 'Lilita One', cursive;
+    padding: 12px 30px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px; 
+    margin: 30px; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    transition: .5s ease;
 
+    &:hover {
+      border: 1px solid #1fbded;
+      // background-color: #1fbded;
+      color: white;
+      box-shadow: 0px 0px 5px white; 
+    }
+  }
+
+  .bu-list {
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  
   .initial-message {
     font-size: 3em;
     text-align: center;
@@ -53,16 +94,28 @@
     border: 4px solid red;
   }
 
+  
   .user-container {
     margin: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s ease linear;
+    
+    .user-bu-list {
+      opacity: 0;
+    }
+    &:hover .user-bu-list {
+      opacity: 1;
+    }
   }
-
+  
   .guess-who {
     font-size: 2em;
     font-family: 'Lilita One', cursive;
     color: white;
   }
-
+  
   #banner {
     position : absolute;
     display:flex;
@@ -71,7 +124,7 @@
     height: 50vh;
     width: 50vw;
   }
-
+  
   .banner--right {
     background-image: url('https://media.giphy.com/media/qvkiDE3xwRPdm/giphy.gif');
     background-size: contain;
@@ -81,7 +134,7 @@
     font-size: 3em;
     text-align: center;
   }
-
+  
   .banner--wrong {
     background-image: url('https://media.giphy.com/media/3o7TKr3nzbh5WgCFxe/giphy.gif');
     background-size: contain;
@@ -89,7 +142,7 @@
     font-size: 3em;
     text-align: center;
   }
-
+  
   .banner-hidden {
     display: none;
   }

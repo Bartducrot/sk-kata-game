@@ -1,6 +1,11 @@
 <template>
-  <div id='app'>
+  <div v-if="chosenGame ==='kiki'" id='app'>
     <div class='initial-message white'>{{ firstMessage }}</div>
+    <select v-model="chosenGame">
+      <option value="kiki">Kiki</option>
+      <option value="BU">BU</option>
+      <option value="trombi">trombi</option>
+    </select>
     <div class='guess-who'>Kiki {{ electedUser.firstName }}?</div>
     <div class='users-list-container'>
       <div
@@ -13,18 +18,75 @@
       </div>
     </div>
     <div id="banner" v-if='userHasChosen' :class='bannerClass()'>
-      {{this.bannerText}}
+      {{this.kikiBannerText}}
+    </div>
+  </div>
+  <div v-else-if="chosenGame ==='BU'" id="app">
+    <div class='initial-message white'>{{ firstMessage }}</div>
+    <select v-model="chosenGame">
+      <option value="kiki">Kiki</option>
+      <option value="BU">BU</option>
+      <option value="trombi">trombi</option>
+    </select>
+    <div class="guess-who">
+      A quelle BU appartient {{ electedUser.firstName }}? 
+      <div class="user-container">
+       <img :class="checkAnswerClass(electedUser)" class="mug-shot" :src="`photos/${electedUser.photo}`"/>
+      </div>
+    </div>
+    <div class="bu-list">
+      <div v-for="bu in BUList" class="bu-choice" :key="bu" @click="() => checkBuAnswer(bu)">
+        {{ bu }}
+      </div>
+    </div>
+    <div id="banner" v-if='userHasChosenBu' :class='buBannerClass()'>
+      {{this.buBannerText}}
+    </div>
+  </div>
+  <div v-else id="app">
+    <div class='initial-message white'>{{ firstMessage }}</div>
+    <select v-model="chosenGame">
+      <option value="kiki">Kiki</option>
+      <option value="BU">BU</option>
+      <option value="trombi">trombi</option>
+    </select>
+    <div class="guess-who">
+      Trombi de tout Skello
+    </div>
+    <div class="users-list-container">
+      <div v-for="user in users" :key="user.firstName" class="user-container">
+        <img :class="checkAnswerClass(user)" class="mug-shot" :src="`photos/${user.photo}`"/>
+        <div class="name">
+          {{ user.firstName }}
+          <ul class="user-bu-list-container user-bu-list">
+            BU: 
+            <li v-for="bu in user.businessUnits" :key="bu + user.firstName">
+              {{ bu }}{{ ' ' }}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+  
+
+  import {  
+    users, coachBu, salesBu, recrutementBu, produitBu, grandsComptesBu,
+    techBu, sdrBu, marketingBu, associesBu, opsBu, teamLeadersBu, BUList 
+  } from './constants.js'
+
   export default {
     data: function () {
       return {
+        chosenGame: 'kiki',
         chosenUser: null,
-        firstMessage: "Skello",
-        users: [],
+        chosenBu: null,
+        firstMessage: "skello",
+        users: users,
+        BUList: BUList,
         electedUser: {firstName: '', photo: ''},
         batch: [],
       }
@@ -36,61 +98,34 @@
       userHasChosen() {
         return this.chosenUser !== null;
       },
-      wrongAnswer() {
+      userHasChosenBu() {
+        return this.chosenBu !== null;
+      },
+      kikiWrongAnswer() {
         return (this.userHasChosen && this.chosenUser !== this.electedUser);
       },
-      rightAnswer() {
+      kikiRightAnswer() {
         return (this.userHasChosen && this.chosenUser === this.electedUser);
       },
-      bannerText() {
-        if (this.rightAnswer) return 'Yay! We did it!!';
+      kikiBannerText() {
+        if (this.kikiRightAnswer) return 'Yay! We did it!!';
         return `Tu as confondu ${this.chosenUser.firstName} avec ${this.electedUser.firstName}, gros boulet`;
+      },
+      buRightAnswer() {
+        return (this.userHasChosenBu && this.electedUser.businessUnits.includes(this.chosenBu) )
+      },
+      buWrongAnswer() {
+        return (this.userHasChosenBu && !this.electedUser.businessUnits.includes(this.chosenBu) )
+      },
+      buBannerText() {
+        if (this.buRightAnswer) return 'Yay! We did it!!';
+        return `Nope!`;
       },
     },
     methods: {
       fetchUsers() {
-        this.users = [
-          { firstName: 'Aéla', photo: 'aela.jpeg' },
-          { firstName: 'Agathe R', photo: 'agathe_r.jpeg' },
-          { firstName: 'Agathe T', photo: 'agathe_t.jpeg' },
-          { firstName: 'Albane', photo: 'albane.jpeg' },
-          { firstName: 'Alexis', photo: 'alex.jpeg' },
-          { firstName: 'Ariane', photo: 'ari.jpeg' },
-          { firstName: 'Arthur', photo: 'arthur.jpeg' },
-          { firstName: 'Bart', photo: 'bart.jpeg' },
-          { firstName: 'Carlotta', photo: 'carlos.jpeg' },
-          { firstName: 'Celestin', photo: 'celo.jpeg' },
-          { firstName: 'Charlotte', photo: 'charlotte.jpeg' },
-          { firstName: 'Chloé', photo: 'chloe.jpeg' },
-          { firstName: 'Constance C', photo: 'constance_c.jpeg' },
-          { firstName: 'Constance P', photo: 'constance_p.jpeg' },
-          { firstName: 'Darivath', photo: 'dari.jpeg' },
-          { firstName: 'Eliott', photo: 'eliott.jpeg' },
-          { firstName: 'Florian', photo: 'flo.jpeg' },
-          { firstName: 'Héloïse', photo: 'heloise.jpeg' },
-          { firstName: 'Hortense', photo: 'hortense.jpeg' },
-          { firstName: 'Jeremy', photo: 'jeremy.jpeg' },
-          { firstName: 'Julia', photo: 'julia.jpeg' },
-          { firstName: 'Quitterie', photo: 'kit.jpeg' },
-          { firstName: 'Jubeo', photo: 'jubeo.jpeg' },
-          { firstName: 'Julie', photo: 'julie.jpeg' },
-          { firstName: 'Lola', photo: 'lola.jpeg' },
-          { firstName: 'Lucie', photo: 'lucie.jpeg' },
-          { firstName: 'Emmanuelle', photo: 'manue.jpeg' },
-          { firstName: 'Marie', photo: 'marie.jpeg' },
-          { firstName: 'Mathilde', photo: 'mathilde.jpeg' },
-          { firstName: 'Minéa', photo: 'mims.jpeg' },
-          { firstName: 'Nicolas', photo: 'nico.jpeg' },
-          { firstName: 'Nisrine', photo: 'niss.jpeg' },
-          { firstName: 'Raphaël', photo: 'raph.jpeg' },
-          { firstName: 'Samy', photo: 'samy.jpeg' },
-          { firstName: 'Thibault', photo: 'thib.jpeg' },
-          { firstName: 'Thomas', photo: 'toto.jpeg' },
-          { firstName: 'Tristan', photo: 'tristan.jpeg' },
-          { firstName: 'Victor C', photo: 'victor_c.jpeg' },
-          { firstName: 'Victor L', photo: 'victor_l.jpeg' },
-        ];
         this.chosenUser = null;
+        this.chosenBu = null;
         for (let i = this.users.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [this.users[i], this.users[j]] = [this.users[j], this.users[i]];
@@ -102,9 +137,13 @@
         this.chosenUser = selectedUser;
         setTimeout(this.fetchUsers, 1500);
       },
+      checkBuAnswer(selectedBu) {
+        this.chosenBu = selectedBu;
+        setTimeout(this.fetchUsers, 1500);
+      },
       checkAnswerClass(user) {
-        const uRight = this.rightAnswer && this.chosenUser === user
-        const uWrong = this.wrongAnswer && this.chosenUser === user
+        const uRight = this.kikiRightAnswer && this.chosenUser === user
+        const uWrong = this.kikiWrongAnswer && this.chosenUser === user
         return {
           correct: uRight,
           wrong: uWrong,
@@ -112,8 +151,14 @@
       },
       bannerClass() {
         return {
-          'banner--right': this.rightAnswer,
-          'banner--wrong': this.wrongAnswer,
+          'banner--right': this.kikiRightAnswer,
+          'banner--wrong': this.kikiWrongAnswer,
+        }
+      },
+      buBannerClass() {
+        return {
+          'banner--right': this.buRightAnswer,
+          'banner--wrong': this.buWrongAnswer,
         }
       }
     }
