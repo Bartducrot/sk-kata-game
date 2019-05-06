@@ -1,6 +1,6 @@
 const coachBu = "Coach"
 const salesBu = "Sales"
-const recrutementBu = "Recrutement"
+const rhBu = "RH"
 const produitBu = "Produit"
 const grandsComptesBu = "Grands Comptes"
 const techBu = "Tech"
@@ -12,7 +12,7 @@ const teamLeadersBu = "Team leaders"
 const users = [
   { firstName: 'Aéla', photo: 'aela.jpeg', businessUnits: [coachBu] },
   { firstName: 'Agathe R', photo: 'agathe_r.jpeg', businessUnits: [salesBu] },
-  { firstName: 'Agathe T', photo: 'agathe_t.jpeg', businessUnits: [recrutementBu] },
+  { firstName: 'Agathe T', photo: 'agathe_t.jpeg', businessUnits: [rhBu] },
   { firstName: 'Albane', photo: 'albane.jpeg', businessUnits: [salesBu] },
   { firstName: 'Alexis', photo: 'alex.jpeg', businessUnits: [salesBu] },
   { firstName: 'Ariane', photo: 'ari.jpeg', businessUnits: ['Produit'] },
@@ -27,7 +27,7 @@ const users = [
   { firstName: 'Darivath', photo: 'dari.jpeg', businessUnits: [salesBu] },
   { firstName: 'Eliott', photo: 'eliott.jpeg', businessUnits: ['Marketing'] },
   { firstName: 'Florian', photo: 'flo.jpeg', businessUnits: [coachBu] },
-  { firstName: 'Héloïse', photo: 'heloise.jpeg', businessUnits: [recrutementBu] },
+  { firstName: 'Héloïse', photo: 'heloise.jpeg', businessUnits: [rhBu] },
   { firstName: 'Hortense', photo: 'hortense.jpeg', businessUnits: [salesBu] },
   { firstName: 'Jeremy', photo: 'jeremy.jpeg', businessUnits: [salesBu] },
   { firstName: 'Jubeo', photo: 'jubeo.jpeg', businessUnits: ['Produit'] },
@@ -36,8 +36,8 @@ const users = [
   { firstName: 'Quitterie', photo: 'kit.jpeg', businessUnits: ['Associés', 'Produit', 'Marketing'] },
   { firstName: 'Lola', photo: 'lola.jpeg', businessUnits: [techBu] },
   { firstName: 'Luc', photo: 'luc.jpeg', businessUnits: [salesBu] },
-  { firstName: 'Lucie', photo: 'lucie.jpeg', businessUnits: [recrutementBu] },
-  { firstName: 'Emmanuelle', photo: 'manue.jpeg', businessUnits: ['Associés', 'Ops', grandsComptesBu, coachBu, recrutementBu] },
+  { firstName: 'Lucie', photo: 'lucie.jpeg', businessUnits: [rhBu] },
+  { firstName: 'Emmanuelle', photo: 'manue.jpeg', businessUnits: ['Associés', 'Ops', grandsComptesBu, coachBu, rhBu] },
   { firstName: 'Marie', photo: 'marie.jpeg', businessUnits: [salesBu] },
   { firstName: 'Mathilde', photo: 'mathilde.jpeg', businessUnits: [salesBu] },
   { firstName: 'Minéa', photo: 'mims.jpeg', businessUnits: [salesBu, "Team leaders"] },
@@ -56,7 +56,7 @@ const users = [
 const BUList = [
   coachBu,
   salesBu,
-  recrutementBu,
+  rhBu,
   produitBu,
   grandsComptesBu,
   techBu,
@@ -71,7 +71,7 @@ export {
   users, 
   coachBu,
   salesBu,
-  recrutementBu,
+  rhBu,
   produitBu,
   grandsComptesBu,
   techBu,
