@@ -59,7 +59,6 @@
         <div class="name">
           {{ user.firstName }}
           <ul class="user-bu-list-container user-bu-list">
-            BU: 
             <li v-for="bu in user.businessUnits" :key="bu + user.firstName">
               {{ bu }}{{ ' ' }}
             </li>
