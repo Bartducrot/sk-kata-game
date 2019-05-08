@@ -103,7 +103,7 @@
     components: { TimeLine },
     data: function () {
       return {
-        chosenGame: 'trombi',
+        chosenGame: 'kiki',
         chosenUser: null,
         chosenBu: null,
         firstMessage: "skello",
