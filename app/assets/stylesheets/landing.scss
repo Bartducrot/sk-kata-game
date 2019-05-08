@@ -98,13 +98,20 @@ select {
     border-radius: 50%;
     height: 200px;
     border: 4px solid transparent;
+    transition: .5s ease linear;
+
 
     &.small {
       height: 50px;
     }
 
     &.mug-shot-kiki {
+      filter: grayscale(50%) saturate(50%);
       cursor: pointer;
+
+      &:hover {
+        filter: grayscale(0%) saturate(100%);
+      }
     }
   }
 
