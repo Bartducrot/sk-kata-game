@@ -15,9 +15,13 @@
         v-for='user in batch'
         class='user-container'
         :key="user.firstName"
-        @click='checkAnswer(user)'
       >
-        <img :class="checkAnswerClass(user)" class="mug-shot" :src="`photos/${user.photo}`"/>
+        <img
+          :class="checkAnswerClass(user)"
+          :src="`photos/${user.photo}`"
+          class="mug-shot mug-shot-kiki"
+          @click='checkAnswer(user)'
+        />
       </div>
     </div>
     <div id="banner" v-if='userHasChosen' :class='bannerClass()'>
@@ -63,7 +67,7 @@
       Trombi de tout Skello
     </div>
     <div class="users-list-container trombi-list">
-      <div v-for="user in users" :key="user.firstName" class="user-container">
+      <div v-for="user in users" :key="user.firstName" class="user-container user-container-trombi">
         <img :class="checkAnswerClass(user)" class="mug-shot" :src="`photos/${user.photo}`"/>
         <div class="name">
           {{ user.firstName }}

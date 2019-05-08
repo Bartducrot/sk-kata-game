@@ -102,6 +102,10 @@ select {
     &.small {
       height: 50px;
     }
+
+    &.mug-shot-kiki {
+      cursor: pointer;
+    }
   }
 
   .correct {
@@ -122,16 +126,20 @@ select {
     border: 1px solid transparent;
     border-radius: 4px;
     padding: 20px;
-    min-height: 375px;
+
+    &.user-container-trombi {
+      min-height: 375px;
+
+      &:hover {
+        border: 1px solid #1fbed4;
+      }
+    }
 
     .user-bu-list {
       opacity: 0;
     }
     &:hover .user-bu-list {
       opacity: 1;
-    }
-    &:hover {
-      border: 1px solid #1fbed4;
     }
   }
 
