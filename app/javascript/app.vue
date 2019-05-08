@@ -1,6 +1,6 @@
 <template>
   <div v-if="chosenGame ==='kiki'" id='app'>
-    <div class='initial-message white'>{{ firstMessage }}</div>
+    <div class='initial-message white'>s<span class='blue'>k</span>ello</div>
     <div class="select-container">
       <select v-model="chosenGame">
         <option value="kiki">Kiki</option>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div v-else-if="chosenGame ==='BU'" id="app">
-    <div class='initial-message white'>{{ firstMessage }}</div>
+    <div class='initial-message white'>s<span class='blue'>k</span>ello</div>
     <div class="select-container">
       <select v-model="chosenGame">
         <option value="kiki">Kiki</option>
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div v-else-if="chosenGame ==='trombi'" id="app">
-    <div class='initial-message white'>{{ firstMessage }}</div>
+    <div class='initial-message white'>s<span class='blue'>k</span>ello</div>
     <div class="select-container">
       <select v-model="chosenGame">
         <option value="kiki">Kiki</option>
@@ -81,7 +81,7 @@
     </div>
   </div>
   <div v-else id="app">
-    <div class='initial-message white'>{{ firstMessage }}</div>
+    <div class='initial-message white'>s<span class='blue'>k</span>ello</div>
     <select v-model="chosenGame">
       <option value="kiki">Kiki</option>
       <option value="BU">BU</option>
@@ -110,7 +110,6 @@
         chosenGame: 'kiki',
         chosenUser: null,
         chosenBu: null,
-        firstMessage: "skello",
         users: users,
         BUList: BUList,
         electedUser: {firstName: '', photo: ''},
