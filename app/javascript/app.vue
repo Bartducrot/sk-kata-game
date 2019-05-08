@@ -1,12 +1,15 @@
 <template>
   <div v-if="chosenGame ==='kiki'" id='app'>
     <div class='initial-message white'>{{ firstMessage }}</div>
-    <select v-model="chosenGame">
-      <option value="kiki">Kiki</option>
-      <option value="BU">BU</option>
-      <option value="trombi">trombi</option>
-    </select>
-    <div class='guess-who'>Kiki {{ electedUser.firstName }}?</div>
+    <div class="select-container">
+      <select v-model="chosenGame">
+        <option value="kiki">Kiki</option>
+        <option value="BU">BU</option>
+        <option value="trombi">trombi</option>
+        <option value="timeline">Timeline</option>
+      </select>
+    </div>
+    <div class='section-description'>Kiki {{ electedUser.firstName }}?</div>
     <div class='users-list-container'>
       <div
         v-for='user in batch'
@@ -23,13 +26,16 @@
   </div>
   <div v-else-if="chosenGame ==='BU'" id="app">
     <div class='initial-message white'>{{ firstMessage }}</div>
-    <select v-model="chosenGame">
-      <option value="kiki">Kiki</option>
-      <option value="BU">BU</option>
-      <option value="trombi">trombi</option>
-    </select>
-    <div class="guess-who">
-      A quelle BU appartient {{ electedUser.firstName }}? 
+    <div class="select-container">
+      <select v-model="chosenGame">
+        <option value="kiki">Kiki</option>
+        <option value="BU">BU</option>
+        <option value="trombi">trombi</option>
+        <option value="timeline">Timeline</option>
+      </select>
+    </div>
+    <div class="section-description">
+      A quelle BU appartient {{ electedUser.firstName }}?
       <div class="user-container">
        <img :class="checkAnswerClass(electedUser)" class="mug-shot" :src="`photos/${electedUser.photo}`"/>
       </div>
@@ -43,17 +49,20 @@
       {{this.buBannerText}}
     </div>
   </div>
-  <div v-else id="app">
+  <div v-else-if="chosenGame ==='trombi'" id="app">
     <div class='initial-message white'>{{ firstMessage }}</div>
-    <select v-model="chosenGame">
-      <option value="kiki">Kiki</option>
-      <option value="BU">BU</option>
-      <option value="trombi">trombi</option>
-    </select>
-    <div class="guess-who">
+    <div class="select-container">
+      <select v-model="chosenGame">
+        <option value="kiki">Kiki</option>
+        <option value="BU">BU</option>
+        <option value="trombi">trombi</option>
+        <option value="timeline">Timeline</option>
+      </select>
+    </div>
+    <div class="section-description">
       Trombi de tout Skello
     </div>
-    <div class="users-list-container">
+    <div class="users-list-container trombi-list">
       <div v-for="user in users" :key="user.firstName" class="user-container">
         <img :class="checkAnswerClass(user)" class="mug-shot" :src="`photos/${user.photo}`"/>
         <div class="name">
@@ -67,20 +76,34 @@
       </div>
     </div>
   </div>
+  <div v-else id="app">
+    <div class='initial-message white'>{{ firstMessage }}</div>
+    <select v-model="chosenGame">
+      <option value="kiki">Kiki</option>
+      <option value="BU">BU</option>
+      <option value="trombi">trombi</option>
+      <option value="timeline">Timeline</option>
+    </select>
+    <div class='section-description'>Qui est arrivé quand?</div>
+    <TimeLine
+      :users="users"
+    />
+  </div>
 </template>
 
 <script>
-  
-
-  import {  
+  import {
     users, coachBu, salesBu, recrutementBu, produitBu, grandsComptesBu,
-    techBu, sdrBu, marketingBu, associesBu, opsBu, teamLeadersBu, BUList 
+    techBu, sdrBu, marketingBu, associesBu, opsBu, teamLeadersBu, BUList
   } from './constants.js'
 
+  import TimeLine from './TimeLine'
+
   export default {
+    components: { TimeLine },
     data: function () {
       return {
-        chosenGame: 'kiki',
+        chosenGame: 'trombi',
         chosenUser: null,
         chosenBu: null,
         firstMessage: "skello",

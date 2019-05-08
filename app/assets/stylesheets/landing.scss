@@ -1,8 +1,20 @@
 // Place all the styles related to the Landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 body {
   background-color: #022149;
+}
+
+select {
+  width: 20vw;
+  height: 2em;
+  font-size: 1em;
+}
+
+.select-container {
+  height: 2em;
+  min-height: 2em;
 }
 
 .blue {
@@ -29,16 +41,16 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  
+
   .bu-choice {
     color: #1fbded;
     font-family: 'Lilita One', cursive;
     padding: 12px 30px;
     background-color: transparent;
     border: 1px solid white;
-    border-radius: 4px; 
-    margin: 30px; 
-    display: flex; 
+    border-radius: 4px;
+    margin: 30px;
+    display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -47,9 +59,7 @@ body {
 
     &:hover {
       border: 1px solid #1fbded;
-      // background-color: #1fbded;
       color: white;
-      box-shadow: 0px 0px 5px white; 
     }
   }
 
@@ -61,13 +71,14 @@ body {
     justify-content: center;
     align-content: center;
   }
-  
+
   .initial-message {
     font-size: 3em;
     text-align: center;
     font-family: 'Lilita One', cursive;
     margin: 1em;
   }
+
   .users-list-container {
     display: flex;
     flex-wrap: wrap;
@@ -77,12 +88,20 @@ body {
     font-size: 1em;
     font-family: 'Lilita One', cursive;
     width: 800px;
+
+    &.trombi-list {
+      width: 1000px;
+    }
   }
 
   .mug-shot {
     border-radius: 50%;
     height: 200px;
     border: 4px solid transparent;
+
+    &.small {
+      height: 50px;
+    }
   }
 
   .correct {
@@ -94,28 +113,34 @@ body {
     border: 4px solid red;
   }
 
-  
+
   .user-container {
-    margin: 26px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: .3s ease linear;
-    
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 20px;
+    min-height: 375px;
+
     .user-bu-list {
       opacity: 0;
     }
     &:hover .user-bu-list {
       opacity: 1;
     }
+    &:hover {
+      border: 1px solid #1fbed4;
+    }
   }
-  
-  .guess-who {
+
+  .section-description {
     font-size: 2em;
     font-family: 'Lilita One', cursive;
     color: white;
   }
-  
+
   #banner {
     position : absolute;
     display:flex;
@@ -124,7 +149,7 @@ body {
     height: 50vh;
     width: 50vw;
   }
-  
+
   .banner--right {
     background-image: url('https://media.giphy.com/media/qvkiDE3xwRPdm/giphy.gif');
     background-size: contain;
@@ -134,7 +159,7 @@ body {
     font-size: 3em;
     text-align: center;
   }
-  
+
   .banner--wrong {
     background-image: url('https://media.giphy.com/media/3o7TKr3nzbh5WgCFxe/giphy.gif');
     background-size: contain;
@@ -142,8 +167,66 @@ body {
     font-size: 3em;
     text-align: center;
   }
-  
+
   .banner-hidden {
     display: none;
   }
 }
+
+.timeline-container {
+  display: flex;
+  max-width: 100vw;
+  overflow: auto;
+}
+
+.timeline-year {
+  display: flex;
+}
+
+.timeline-month {
+  color: white;
+  font-size: 1em;
+  font-family: 'Lilita One', cursive;
+  max-height: 75vh;
+  overflow: auto;
+
+  &.no-event {
+    opacity: .5;
+  }
+}
+
+.timeline-month-name {
+  padding: 15px;
+  white-space: nowrap;
+  border-bottom: 1px solid white;
+  position: sticky;
+  top: 0;
+  background-color: #022149;
+}
+
+.timeline-user-card {
+  background-color: rgba(31, 189, 237, .2);
+  margin: 15px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 25px;
+  width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
