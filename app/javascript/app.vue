@@ -25,7 +25,7 @@
       </div>
     </div>
     <div id="banner" v-if='userHasChosen' :class='bannerClass()'>
-      {{this.kikiBannerText}}
+      {{ this.kikiBannerText }}
     </div>
   </div>
   <div v-else-if="chosenGame ==='BU'" id="app">
@@ -50,7 +50,7 @@
       </div>
     </div>
     <div id="banner" v-if='userHasChosenBu' :class='buBannerClass()'>
-      {{this.buBannerText}}
+      {{ this.buBannerText }}
     </div>
   </div>
   <div v-else-if="chosenGame ==='trombi'" id="app">
@@ -73,7 +73,7 @@
           {{ user.firstName }}
           <ul class="user-bu-list-container user-bu-list">
             <li v-for="bu in user.businessUnits" :key="bu + user.firstName">
-              {{ bu }}{{ ' ' }}
+              {{ bu }}
             </li>
           </ul>
         </div>

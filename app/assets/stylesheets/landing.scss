@@ -106,12 +106,7 @@ select {
     }
 
     &.mug-shot-kiki {
-      filter: grayscale(50%) saturate(50%);
       cursor: pointer;
-
-      &:hover {
-        filter: grayscale(0%) saturate(100%);
-      }
     }
   }
 

@@ -21,7 +21,7 @@ const users = [
   { firstName: 'Bart', photo: 'bart.jpeg', businessUnits: [techBu], startDate: '2017/11' },
   { firstName: 'Carlotta', photo: 'carlos.jpeg', businessUnits: [coachBu], startDate: '2018/03' },
   { firstName: 'Caroline', photo: 'caroline.jpeg', businessUnits: [produitBu], startDate: '2019/05' },
-  { firstName: 'Celestin', photo: 'celo.jpeg', businessUnits: [techBu], startDate: '2018/03' },
+  { firstName: 'Celestin', photo: 'celo.jpeg', businessUnits: [techBu], startDate: '2018/02' },
   { firstName: 'Charlotte', photo: 'charlotte.jpeg', businessUnits: [sdrBu, salesBu], startDate: '2019/03' },
   { firstName: 'Chloé', photo: 'chloe.jpeg', businessUnits: [sdrBu, salesBu], startDate: '2019/03' },
   { firstName: 'Constance C', photo: 'constance_c.jpeg', businessUnits: [grandsComptesBu, salesBu], startDate: '2019/03' },
@@ -55,8 +55,6 @@ const users = [
   { firstName: 'Victor C', photo: 'victor_c.jpeg', businessUnits: [opsBu], startDate: '2018/09' },
   { firstName: 'Victor L', photo: 'victor_l.jpeg', businessUnits: [techBu], startDate: '2017/11' },
 ];
-
-// moment('2017/09', 'YYYY/MM').format('DD/MM/YYYY')
 
 const BUList = [
   coachBu,
