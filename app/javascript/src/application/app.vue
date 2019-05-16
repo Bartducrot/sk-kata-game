@@ -1,6 +1,6 @@
 <template>
   <div v-if="chosenGame ==='kiki'" id='app'>
-    <div class='initial-message white'>s<span class='blue'>k</span>ello</div>
+    <div class='initial-message white'>s<span class='blue'>k</span>ello  ca marche</div>
     <div class="select-container">
       <select v-model="chosenGame">
         <option value="kiki">Kiki</option>
@@ -101,7 +101,7 @@
     techBu, sdrBu, marketingBu, associesBu, opsBu, teamLeadersBu, BUList
   } from './constants.js'
 
-  import TimeLine from './TimeLine'
+  import TimeLine from './views/TimeLine'
 
   export default {
     components: { TimeLine },
