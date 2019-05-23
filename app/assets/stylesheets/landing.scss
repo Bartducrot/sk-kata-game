@@ -41,146 +41,146 @@ select {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
 
-  .bu-choice {
-    color: #1fbded;
-    font-family: 'Lilita One', cursive;
-    padding: 12px 30px;
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 4px;
-    margin: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+.bu-choice {
+  color: #1fbded;
+  font-family: 'Lilita One', cursive;
+  padding: 12px 30px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  cursor: pointer;
+  transition: .5s ease;
+
+  &:hover {
+    border: 1px solid #1fbded;
+    color: white;
+  }
+}
+
+.bu-list {
+  display: flex;
+  width: 80%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.initial-message {
+  font-size: 3em;
+  text-align: center;
+  font-family: 'Lilita One', cursive;
+  margin: 1em;
+}
+
+.users-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1em;
+  font-family: 'Lilita One', cursive;
+  width: 800px;
+
+  &.trombi-list {
+    width: 1000px;
+  }
+}
+
+.mug-shot {
+  border-radius: 50%;
+  height: 200px;
+  border: 4px solid transparent;
+  transition: .5s ease linear;
+
+
+  &.small {
+    height: 50px;
+  }
+
+  &.mug-shot-kiki {
     cursor: pointer;
-    transition: .5s ease;
+  }
+}
+
+.correct {
+  background-color: red;
+  border: 4px solid green;
+}
+
+.wrong {
+  border: 4px solid red;
+}
+
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: .3s ease linear;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 20px;
+
+  &.user-container-trombi {
+    min-height: 375px;
 
     &:hover {
-      border: 1px solid #1fbded;
-      color: white;
+      border: 1px solid #1fbed4;
     }
   }
 
-  .bu-list {
-    display: flex;
-    width: 80%;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+  .user-bu-list {
+    opacity: 0;
   }
-
-  .initial-message {
-    font-size: 3em;
-    text-align: center;
-    font-family: 'Lilita One', cursive;
-    margin: 1em;
+  &:hover .user-bu-list {
+    opacity: 1;
   }
+}
 
-  .users-list-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1em;
-    font-family: 'Lilita One', cursive;
-    width: 800px;
+.section-description {
+  font-size: 2em;
+  font-family: 'Lilita One', cursive;
+  color: white;
+}
 
-    &.trombi-list {
-      width: 1000px;
-    }
-  }
+#banner {
+  position : absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 50vw;
+}
 
-  .mug-shot {
-    border-radius: 50%;
-    height: 200px;
-    border: 4px solid transparent;
-    transition: .5s ease linear;
+.banner--right {
+  background-image: url('https://media.giphy.com/media/qvkiDE3xwRPdm/giphy.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
 
+.banner--wrong {
+  background-image: url('https://media.giphy.com/media/3o7TKr3nzbh5WgCFxe/giphy.gif');
+  background-size: contain;
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
 
-    &.small {
-      height: 50px;
-    }
-
-    &.mug-shot-kiki {
-      cursor: pointer;
-    }
-  }
-
-  .correct {
-    background-color: red;
-    border: 4px solid green;
-  }
-
-  .wrong {
-    border: 4px solid red;
-  }
-
-
-  .user-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: .3s ease linear;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    padding: 20px;
-
-    &.user-container-trombi {
-      min-height: 375px;
-
-      &:hover {
-        border: 1px solid #1fbed4;
-      }
-    }
-
-    .user-bu-list {
-      opacity: 0;
-    }
-    &:hover .user-bu-list {
-      opacity: 1;
-    }
-  }
-
-  .section-description {
-    font-size: 2em;
-    font-family: 'Lilita One', cursive;
-    color: white;
-  }
-
-  #banner {
-    position : absolute;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-    width: 50vw;
-  }
-
-  .banner--right {
-    background-image: url('https://media.giphy.com/media/qvkiDE3xwRPdm/giphy.gif');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    color: white;
-    font-size: 3em;
-    text-align: center;
-  }
-
-  .banner--wrong {
-    background-image: url('https://media.giphy.com/media/3o7TKr3nzbh5WgCFxe/giphy.gif');
-    background-size: contain;
-    color: white;
-    font-size: 3em;
-    text-align: center;
-  }
-
-  .banner-hidden {
-    display: none;
-  }
+.banner-hidden {
+  display: none;
 }
 
 .timeline-container {

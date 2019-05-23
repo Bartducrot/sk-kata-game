@@ -1,5 +1,6 @@
 <template>
   <div class='timeline-container'>
+    <div class='section-description'>Qui est arrivé quand?</div>
     <div v-for="year in years" class="timeline-year">
       <div v-for="month in months" :class="monthClass(month, year)" class='timeline-month'>
         <div class="timeline-month-name">

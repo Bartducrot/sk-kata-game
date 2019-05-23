@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Home from '../views/Home';
-import Organisations from '../views/Organisations';
+import Kiki from '../application/views/Kiki'
+import BusinessUnit from '../application/views/BusinessUnit'
+import Timeline from '../application/views/TimeLine'
+import Trombi from '../application/views/Trombi'
 
 Vue.use(Router);
 
@@ -10,10 +12,10 @@ export default new Router({
   mode: 'hash',
   // scrollBehavior: () => ({ y: 0 }),
   routes: [
-    { path: '/', component: Kiki },
-    { path: '/kiki', component: Kiki },
-    { path: '/bu', component: BusinessUnit },
-    { path: '/timeline', component: Timeline },
-    { path: '/trombi', component: Trombi },
+    { path: '/', name: 'home', component: Kiki },
+    { path: '/kiki', name: 'kiki', component: Kiki },
+    { path: '/bu', name: 'businessUnit', component: BusinessUnit },
+    { path: '/timeline', name: 'timeline', component: Timeline },
+    { path: '/trombi', name: 'trombi', component: Trombi },
   ],
 });

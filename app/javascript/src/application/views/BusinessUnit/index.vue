@@ -1,22 +1,18 @@
 <template>
   <div>
-    <div class='section-description'>Kiki {{ electedUser.firstName }}?</div>
-    <div class='users-list-container'>
-      <div
-        v-for='user in batch'
-        class='user-container'
-        :key="user.firstName"
-      >
-        <img
-          :class="checkAnswerClass(user)"
-          :src="`photos/${user.photo}`"
-          class="mug-shot mug-shot-kiki"
-          @click='checkAnswer(user)'
-        />
+    <div class="section-description">
+      A quelle BU appartient {{ electedUser.firstName }}?
+      <div class="user-container">
+       <img :class="checkAnswerClass(electedUser)" class="mug-shot" :src="`photos/${electedUser.photo}`"/>
       </div>
     </div>
-    <div id="banner" v-if='userHasChosen' :class='bannerClass()'>
-      {{ this.kikiBannerText }}
+    <div class="bu-list">
+      <div v-for="bu in BUList" class="bu-choice" :key="bu" @click="() => checkBuAnswer(bu)">
+        {{ bu }}
+      </div>
+    </div>
+    <div id="banner" v-if='userHasChosenBu' :class='buBannerClass()'>
+      {{ this.buBannerText }}
     </div>
   </div>
 </template>
@@ -30,6 +26,7 @@
   export default {
     data: function () {
       return {
+        chosenGame: 'kiki',
         chosenUser: null,
         chosenBu: null,
         users: users,
