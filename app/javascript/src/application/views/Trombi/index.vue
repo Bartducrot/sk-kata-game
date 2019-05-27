@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="trombi">
     <div class="section-description">
       Trombi de tout Skello - truc
     </div>
@@ -23,18 +23,25 @@
 
 moment.locale('fr');
 
+import { users } from '../../constants.js'
+
 export default {
-  props: {
-    users: {
-      type: Array,
-      required: true,
-    }
-  },
+  props: {},
   data() {
-    return {};
+    return {
+      users: users,
+    };
   },
   computed: {},
   mounted() {},
   methods: {},
 };
 </script>
+
+<style lang="scss" scoped>
+  #trombi {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
