@@ -130,6 +130,8 @@
     color: white;
     font-size: 3em;
     text-align: center;
+    height: 50vh;
+    width: 50vw;
   }
 
   .banner--wrong {
@@ -138,15 +140,18 @@
     color: white;
     font-size: 3em;
     text-align: center;
+    height: 50vh;
+    width: 50vw;
   }
-
+ 
   #banner {
     position : absolute;
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    width: 50vw;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .banner-hidden {

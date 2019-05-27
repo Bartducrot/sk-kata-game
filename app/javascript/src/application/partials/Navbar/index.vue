@@ -43,7 +43,7 @@
     text-decoration: none;
     width: 20%;
     text-align: center;
-    padding: 50px;
+    padding: 50px 0;
     font-size: 1.5em;
     font-family: 'Permanent Marker', cursive;
 

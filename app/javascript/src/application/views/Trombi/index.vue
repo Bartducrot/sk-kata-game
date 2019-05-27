@@ -55,7 +55,7 @@ export default {
     color: white;
     font-size: 1em;
     font-family: 'Lilita One', cursive;
-    width: 1000px;
+    width: 100%;
     max-height: 80vh;
     overflow-y: auto;
   }

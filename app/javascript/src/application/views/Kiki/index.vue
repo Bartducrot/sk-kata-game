@@ -69,7 +69,7 @@
       },
       checkAnswer(selectedUser) {
         this.chosenUser = selectedUser;
-        setTimeout(this.fetchUsers, 15000);
+        setTimeout(this.fetchUsers, 1500);
       },
       checkAnswerClass(user) {
         const uRight = this.kikiRightAnswer && this.chosenUser === user
