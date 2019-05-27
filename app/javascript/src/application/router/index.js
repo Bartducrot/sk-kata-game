@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Kiki from '../application/views/Kiki'
-import BusinessUnit from '../application/views/BusinessUnit'
-import Timeline from '../application/views/TimeLine'
-import Trombi from '../application/views/Trombi'
+import Kiki from '../views/Kiki'
+import BusinessUnit from '../views/BusinessUnit'
+import Timeline from '../views/TimeLine'
+import Trombi from '../views/Trombi'
 
 Vue.use(Router);
 

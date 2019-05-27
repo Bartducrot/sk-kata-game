@@ -1,7 +1,7 @@
 <template>
   <div id="trombi">
     <div class="section-description">
-      Trombi de tout Skello - truc
+      Trombi de tout Skello
     </div>
     <div class="users-list-container trombi-list">
       <div v-for="user in users" :key="user.firstName" class="user-container user-container-trombi">
@@ -39,9 +39,62 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  #trombi {
+  .section-description {
+    font-size: 2em;
+    font-family: 'Lilita One', cursive;
+    color: white;
+  }
+
+  .users-list-container {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
+    color: white;
+    font-size: 1em;
+    font-family: 'Lilita One', cursive;
+    width: 1000px;
+  }
+
+  .mug-shot {
+    border-radius: 50%;
+    height: 200px;
+    border: 4px solid transparent;
+    transition: .5s ease linear;
+
+
+    &.small {
+      height: 50px;
+    }
+
+    &.mug-shot-kiki {
+      cursor: pointer;
+    }
+  }
+ 
+  .user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s ease linear;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 20px;
+
+    &.user-container-trombi {
+      min-height: 375px;
+
+      &:hover {
+        border: 1px solid #1fbed4;
+      }
+    }
+
+    .user-bu-list {
+      opacity: 0;
+    }
+    &:hover .user-bu-list {
+      opacity: 1;
+    }
   }
 </style>
 

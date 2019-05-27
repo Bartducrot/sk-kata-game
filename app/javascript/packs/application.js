@@ -11,7 +11,7 @@ import Vue from 'vue'
 // import App from '../app.vue'
 
 import App from '../src/application/app.vue'
-import router from '../src/router/index.js'
+import router from '../src/application/router/index.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('application'))
