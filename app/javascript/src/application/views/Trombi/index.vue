@@ -43,6 +43,8 @@ export default {
     font-size: 2em;
     font-family: 'Lilita One', cursive;
     color: white;
+    width: 100%;
+    text-align: center;
   }
 
   .users-list-container {
@@ -54,6 +56,8 @@ export default {
     font-size: 1em;
     font-family: 'Lilita One', cursive;
     width: 1000px;
+    max-height: 80vh;
+    overflow-y: auto;
   }
 
   .mug-shot {

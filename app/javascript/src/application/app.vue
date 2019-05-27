@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <div class='initial-message white'>s<span class='blue'>k</span>ello</div>
-    <div class="navbar">
-      <router-link :to="{name: 'kiki'}">KIKI</router-link>
-      <router-link :to="{name: 'businessUnit'}">businessUnit</router-link>
-      <router-link :to="{name: 'trombi'}">Trombi</router-link>
-      <router-link :to="{name: 'timeline'}">TimeLine</router-link>
-    </div>
+    <Navbar/>  
     <router-view/>
   </div>
 </template>
 
 <script>
+  import Navbar from './partials/Navbar'
+
   export default {
-    components: {},
+    name: 'MainApp',
+    components: { Navbar },
     data: function () {
       return {}
     },
@@ -51,6 +48,5 @@
   font-size: 3em;
   text-align: center;
   font-family: 'Lilita One', cursive;
-  margin: 1em;
 }
 </style>

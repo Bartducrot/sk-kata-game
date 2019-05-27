@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='kiki'>
     <div class='section-description'>Kiki {{ electedUser.firstName }}?</div>
     <div class='users-list-container'>
       <div
@@ -69,7 +69,7 @@
       },
       checkAnswer(selectedUser) {
         this.chosenUser = selectedUser;
-        setTimeout(this.fetchUsers, 1500);
+        setTimeout(this.fetchUsers, 15000);
       },
       checkAnswerClass(user) {
         const uRight = this.kikiRightAnswer && this.chosenUser === user
@@ -90,6 +90,14 @@
 </script>
 
 <style lang="sass" scoped>
+  #kiki {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .section-description {
     font-size: 2em;
     font-family: 'Lilita One', cursive;
@@ -101,6 +109,7 @@
   .mug-shot {
     border-radius: 50%;
     height: 200px;
+    max-height: 33vh;
     border: 4px solid transparent;
     transition: .5s ease linear;
 
@@ -122,24 +131,14 @@
   .wrong {
     border: 4px solid red;
   }
+
   .user-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: .3s ease linear;
-    border: 1px solid transparent;
-    border-radius: 4px;
     padding: 20px;
-
-    &.user-container-trombi {
-      min-height: 375px;
-
-      &:hover {
-        border: 1px solid #1fbed4;
-      }
-    }
   }
-  
+
   .users-list-container {
     display: flex;
     flex-wrap: wrap;
@@ -159,6 +158,8 @@
     color: white;
     font-size: 3em;
     text-align: center;
+    height: 50vh;
+    width: 50vw;
   }
 
   .banner--wrong {
@@ -167,6 +168,8 @@
     color: white;
     font-size: 3em;
     text-align: center;
+    height: 50vh;
+    width: 50vw;
   }
  
   #banner {
@@ -174,8 +177,9 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    width: 50vw;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .banner-hidden {
