@@ -28,6 +28,7 @@
   } from '../../constants.js'
 
   export default {
+    name: 'Kiki',
     data: function () {
       return {
         chosenUser: null,

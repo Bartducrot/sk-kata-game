@@ -26,6 +26,7 @@ moment.locale('fr');
 import { users } from '../../constants.js'
 
 export default {
+  name: 'Trombi',
   props: {},
   data() {
     return {

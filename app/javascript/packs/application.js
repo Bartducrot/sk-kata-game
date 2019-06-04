@@ -8,13 +8,23 @@
 // layout file, like app/views/layouts/application.html.erb
 
 import Vue from 'vue'
-// import App from '../app.vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios';
 
 import App from '../src/application/app.vue'
 import router from '../src/application/router/index.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('application'))
+  const $csrfToken = document.querySelector('meta[name="csrf-token"]');
+
+  const axiosInstance = axios.create({
+    headers: {
+      'X-CSRF-Token': $csrfToken ? $csrfToken.content : '',
+    },
+  });
+  
+  Vue.use(VueAxios, axiosInstance);
 
   const app = new Vue({
     el,

@@ -24,6 +24,7 @@
   } from '../../constants.js'
 
   export default {
+    name: 'BusinessUnit',
     data: function () {
       return {
         chosenBu: null,
