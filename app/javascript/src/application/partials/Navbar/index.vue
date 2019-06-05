@@ -1,6 +1,8 @@
 <template>
   <div id="navbar">
-    <div class='initial-message white'>s<span class='blue'>k</span>ello</div>
+    <div class='initial-message white'>
+      s<router-link :to="{name: 'suggestions'}" class='blue'>k</router-link>ello
+    </div>
     <div class="navbar-link">
       <router-link :to="{name: 'kiki'}">KIKI</router-link>
       <router-link :to="{name: 'businessUnit'}">Business Unit</router-link>

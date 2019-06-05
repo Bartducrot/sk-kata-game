@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  descriptionn: MyString
+  planned_date: 2019-06-05
+  category: 1
+  kata_leader: MyString
+
+two:
+  name: MyString
+  descriptionn: MyString
+  planned_date: 2019-06-05
+  category: 1
+  kata_leader: MyString
