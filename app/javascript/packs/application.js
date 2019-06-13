@@ -8,12 +8,12 @@
 // layout file, like app/views/layouts/application.html.erb
 import 'es6-promise/auto'
 import Vue from 'vue';
-import Vuex from 'vuex';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
-import App from '../src/application/app.vue'
-import router from '../src/application/router/index.js'
+import App from '../src/application/app.vue';
+import router from '../src/application/router/index.js';
+import store from '../src/application/store/index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const el = document.body.appendChild(document.createElement('application'))
@@ -24,12 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
       'X-CSRF-Token': $csrfToken ? $csrfToken.content : '',
     },
   });
-  
-  Vue.use(VueAxios, axiosInstance, Vuex);
+
+  Vue.use(VueAxios, axiosInstance);
 
   const app = new Vue({
     el,
     router,
+    store,
     render: h => h(App)
   })
 })
