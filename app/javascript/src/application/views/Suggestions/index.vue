@@ -29,6 +29,7 @@
           <option value="samy">Samy</option>
           <option value="seb">Seb</option>
           <option value="victor">Victor</option>
+          <option value="arthur">Arthur</option>
         </select>
         <img 
           v-if="kataLeaderNew"
