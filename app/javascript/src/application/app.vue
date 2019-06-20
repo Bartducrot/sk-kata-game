@@ -17,7 +17,8 @@
     },
     mounted() {
       // this.$store.commit('setUsers', users);
-      this.fetchUsers()
+      this.fetchUsers();
+      console.log("1");
     },
     computed: {},
     methods: {

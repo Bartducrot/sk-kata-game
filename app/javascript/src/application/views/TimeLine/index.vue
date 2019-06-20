@@ -18,9 +18,9 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 moment.locale('fr');
-import { users } from '../../constants.js'
 
 export default {
   name: 'TimeLine',
@@ -30,14 +30,13 @@ export default {
       nbMonth: moment().diff(moment('2016/01'), 'month'),
       years: [2016, 2017, 2018, 2019],
       months: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
-      users: users,
     };
   },
   computed: {},
   mounted() {},
   methods: {
     usersInMonth(month, year) {
-      return this.users.filter(user => moment(user.startDate, 'YYYY/MM').format('YYYY/MM') === `${year}/${month}`);
+      return this.$store.state.users.filter(user => moment(user.startDate, 'YYYY/MM').format('YYYY/MM') === `${year}/${month}`);
     },
     monthClass(month, year) {
       return {

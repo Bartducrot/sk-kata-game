@@ -22,25 +22,34 @@
 </template>
 
 <script>
-  import {
-    users, coachBu, salesBu, recrutementBu, produitBu, grandsComptesBu,
-    techBu, sdrBu, marketingBu, associesBu, opsBu, teamLeadersBu, BUList
-  } from '../../constants.js'
+import { mapGetters } from 'vuex';
 
   export default {
     name: 'Kiki',
     data: function () {
       return {
         chosenUser: null,
-        users: users,
         electedUser: {firstName: '', photo: ''},
         batch: [],
       }
     },
     mounted() {
-      this.fetchUsers();
+      if (this.isLoaded) {
+        this.fetchUsers();
+      }
+    },
+    watch: {
+      isLoaded(newValue, oldValue) {
+        if (newValue) {
+          this.fetchUsers();
+        }
+      }
     },
     computed: {
+      // isLoaded() {
+      //   return this.$store.getters.isLoaded;
+      // },
+      ...mapGetters(['isLoaded']),
       userHasChosen() {
         return this.chosenUser !== null;
       },
@@ -61,11 +70,14 @@
     methods: {
       fetchUsers() {
         this.chosenUser = null;
-        for (let i = this.users.length - 1; i > 0; i--) {
+        const users = this.$store.state.users;
+        // TO DO -- select 6 differents random numbers 
+        // filter users with those random indexes --> do not mutate state
+        for (let i = users.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
-          [this.users[i], this.users[j]] = [this.users[j], this.users[i]];
+          [users[i], users[j]] = [users[j], users[i]];
         }
-        this.batch = this.users.slice(0, 6)
+        this.batch = users.slice(0, 6)
         this.electedUser = this.batch[Math.floor ( Math.random() * this.batch.length )];
       },
       checkAnswer(selectedUser) {
