@@ -6,7 +6,8 @@
 </template>
 
 <script>
-  import Navbar from './partials/Navbar'
+  import { mapActions } from 'vuex';
+  import Navbar from './partials/Navbar';
 
   export default {
     name: 'MainApp',
@@ -14,9 +15,15 @@
     data: function () {
       return {}
     },
-    mounted() {},
+    mounted() {
+      // this.$store.commit('setUsers', users);
+      this.fetchUsers();
+      console.log("1");
+    },
     computed: {},
-    methods: {}
+    methods: {
+      ...mapActions(['fetchUsers'])
+    }
   }
 </script>
 
