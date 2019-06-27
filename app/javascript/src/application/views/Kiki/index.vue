@@ -3,7 +3,7 @@
     <div class='section-description'>Kiki {{ electedUser.firstName }}?</div>
     <div class='users-list-container'>
       <div
-        v-for='user in batch'
+        v-for='user in randomBatch'
         class='user-container'
         :key="user.firstName"
       >
@@ -49,7 +49,7 @@ import { mapGetters } from 'vuex';
       // isLoaded() {
       //   return this.$store.getters.isLoaded;
       // },
-      ...mapGetters(['isLoaded']),
+      ...mapGetters(['isLoaded', 'randomBatch']),
       userHasChosen() {
         return this.chosenUser !== null;
       },
@@ -71,14 +71,15 @@ import { mapGetters } from 'vuex';
       fetchUsers() {
         this.chosenUser = null;
         const users = this.$store.state.users;
-        // TO DO -- select 6 differents random numbers 
-        // filter users with those random indexes --> do not mutate state
-        for (let i = users.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [users[i], users[j]] = [users[j], users[i]];
-        }
-        this.batch = users.slice(0, 6)
-        this.electedUser = this.batch[Math.floor ( Math.random() * this.batch.length )];
+        // // TO DO -- select 6 differents random numbers 
+        // // filter users with those random indexes --> do not mutate state
+        // for (let i = users.length - 1; i > 0; i--) {
+        //   const j = Math.floor(Math.random() * (i + 1));
+        //   [users[i], users[j]] = [users[j], users[i]];
+        // }
+        // this.batch = users.slice(0, 6)
+
+        this.electedUser = this.randomBatch[Math.floor ( Math.random() * this.randomBatch.length )];
       },
       checkAnswer(selectedUser) {
         this.chosenUser = selectedUser;

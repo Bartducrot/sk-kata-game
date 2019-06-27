@@ -20,7 +20,17 @@ const store = new Vuex.Store({
   getters: {
     isLoaded: (state) => {
       return state.loaded;
-    }
+    },
+    randomBatch: (state, size = 6) => {
+      const batch = [];
+      let availableUsers = state.users
+      for (let i = 0; i < size - 1; i++) {
+        let randomIndex = Math.floor(Math.random() * availableUsers.length);
+        batch.push(availableUsers[randomIndex])
+        availableUsers = availableUsers.slice(randomIndex, 1)
+      }
+      return batch;
+    },
   },
   actions: {
     fetchUsers(context) {
