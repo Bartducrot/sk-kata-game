@@ -18,7 +18,7 @@ const users = [
   { firstName: 'Agathe T', photo: 'agathe_t.jpeg', businessUnits: [rhBu], startDate: '2018/07' },
   { firstName: 'Albane', photo: 'albane.jpeg', businessUnits: [salesBu], startDate: '2019/04' },
   { firstName: 'Alexis', photo: 'alex.jpeg', businessUnits: [salesBu], startDate: '2017/03' },
-  { firstName: 'Anaïs', photo: 'anais.jpeg', businessUnits: [supportBu], startDate: '2017/03' },
+  { firstName: 'Anaïs', photo: 'anais.jpeg', businessUnits: [supportBu], startDate: '2019/06' },
   { firstName: 'Ariane', photo: 'ari.jpeg', businessUnits: [produitBu], startDate: '2016/10' },
   { firstName: 'Arthur', photo: 'arthur.jpeg', businessUnits: [grandsComptesBu, techBu], startDate: '2019/03' },
   { firstName: 'Aubin', photo: 'aubin.jpeg', businessUnits: [techBu], startDate: '2019/06' },
