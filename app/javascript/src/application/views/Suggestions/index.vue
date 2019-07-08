@@ -22,10 +22,13 @@
       <div class='input-container inline-input'>
         <div>Auteur:</div>
         <select v-model="kataLeaderNew">
+          <option value="aubin">Aubin</option>
+          <option value="arthur">Arthur</option>
           <option value="bart">Bart</option>
           <option value="celo">Celo</option>
           <option value="lola">Lola</option>
-          <option value="lucas ">Lucas </option>
+          <option value="lucas">Lucas</option>
+          <option value="rouslan">Rouslan</option>
           <option value="samy">Samy</option>
           <option value="seb">Seb</option>
           <option value="victor">Victor</option>

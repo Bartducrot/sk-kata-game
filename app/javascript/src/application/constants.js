@@ -6,18 +6,22 @@ const grandsComptesBu = "Grands Comptes"
 const techBu = "Tech"
 const sdrBu = "SDR"
 const marketingBu = "Marketing"
+const partenariatBu = "Partenariat"
 const associesBu = "Associés"
 const opsBu = "Ops"
 const teamLeadersBu = "Team leaders"
 const financeBu = "Finance"
+const supportBu = "Support"
 const users = [
   { firstName: 'Aéla', photo: 'aela.jpeg', businessUnits: [coachBu], startDate: '2019/03' },
   { firstName: 'Agathe R', photo: 'agathe_r.jpeg', businessUnits: [salesBu], startDate: '2019/03' },
   { firstName: 'Agathe T', photo: 'agathe_t.jpeg', businessUnits: [rhBu], startDate: '2018/07' },
   { firstName: 'Albane', photo: 'albane.jpeg', businessUnits: [salesBu], startDate: '2019/04' },
   { firstName: 'Alexis', photo: 'alex.jpeg', businessUnits: [salesBu], startDate: '2017/03' },
+  { firstName: 'Anaïs', photo: 'anais.jpeg', businessUnits: [supportBu], startDate: '2017/03' },
   { firstName: 'Ariane', photo: 'ari.jpeg', businessUnits: [produitBu], startDate: '2016/10' },
   { firstName: 'Arthur', photo: 'arthur.jpeg', businessUnits: [grandsComptesBu, techBu], startDate: '2019/03' },
+  { firstName: 'Aubin', photo: 'aubin.jpeg', businessUnits: [techBu], startDate: '2019/06' },
   { firstName: 'Bart', photo: 'bart.jpeg', businessUnits: [techBu], startDate: '2017/11' },
   { firstName: 'Carlotta', photo: 'carlos.jpeg', businessUnits: [coachBu], startDate: '2018/03' },
   { firstName: 'Caroline', photo: 'caroline.jpeg', businessUnits: [produitBu], startDate: '2019/05' },
@@ -28,6 +32,7 @@ const users = [
   { firstName: 'Constance P', photo: 'constance_p.jpeg', businessUnits: [coachBu], startDate: '2018/08' },
   { firstName: 'Darivath', photo: 'dari.jpeg', businessUnits: [salesBu], startDate: '2017/09' },
   { firstName: 'Eliott', photo: 'eliott.jpeg', businessUnits: [marketingBu], startDate: '2018/11' },
+  { firstName: 'Eole', photo: 'eole.jpeg', businessUnits: [partenariatBu], startDate: '2019/06' },
   { firstName: 'Florian', photo: 'flo.jpeg', businessUnits: [coachBu], startDate: '2018/02' },
   { firstName: 'Héloïse', photo: 'heloise.jpeg', businessUnits: [rhBu], startDate: '2019/01' },
   // { firstName: 'Hortense', photo: 'hortense.jpeg', businessUnits: [salesBu], startDate: '2019/01' },
@@ -48,6 +53,7 @@ const users = [
   { firstName: 'Nisrine', photo: 'niss.jpeg', businessUnits: [salesBu, teamLeadersBu], startDate: '2017/09' },
   { firstName: 'Pénélope', photo: 'penelope.jpeg', businessUnits: [financeBu], startDate: '2019/05' },
   { firstName: 'Raphaël', photo: 'raph.jpeg', businessUnits: [salesBu], startDate: '2018/10' },
+  { firstName: 'Rouslan', photo: 'rouslan.jpeg', businessUnits: [techBu], startDate: '2019/06' },
   { firstName: 'Samy', photo: 'samy.jpeg', businessUnits: [associesBu, techBu], startDate: '2016/02' },
   { firstName: 'Seb', photo: 'seb.jpeg', businessUnits: [techBu], startDate: '2017/09' },
   { firstName: 'Thibault', photo: 'thib.jpeg', businessUnits: [associesBu, salesBu], startDate: '2016/10' },
@@ -68,7 +74,10 @@ const BUList = [
   marketingBu,
   associesBu,
   opsBu,
-  teamLeadersBu
+  teamLeadersBu,
+  partenariatBu,
+  supportBu,
+  financeBu
 ];
 
 export {
@@ -84,5 +93,7 @@ export {
   associesBu,
   opsBu,
   teamLeadersBu,
+  partenariatBu,
+  supportBu,
   BUList
 };
