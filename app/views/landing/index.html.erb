@@ -1,2 +1,6 @@
-<%= javascript_pack_tag 'application' %>
-<%= stylesheet_pack_tag 'application' %>
+<% if current_user %>
+  <%= javascript_pack_tag 'application' %>
+  <%= stylesheet_pack_tag 'application' %>
+<% else %>
+  PAGE DE CONNEXION
+<% end %>
