@@ -1,24 +1,8 @@
-# README
+# MAQUETTES: 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://www.figma.com/file/YlHcfopjTdeGo554MFD55gEM/Styleguide?node-id=153%3A142
 
-Things you may want to cover:
+# TO DO: 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Backend: Devise
+- Front: SignIn SignUp (SPA)
